@@ -1,0 +1,122 @@
+:root {
+  --bg: #f0f4ff;
+  --surface: #ffffff;
+  --primary: #2c76ff;
+  --primary-dark: #1d5ddf;
+  --text: #1f2937;
+  --muted: #58606f;
+  --border: #dadedf;
+  --radius: 14px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: radial-gradient(circle at 20% 20%, #e3ebff, var(--bg));
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.2rem;
+}
+
+.card {
+  max-width: 540px;
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 12px 30px rgba(35, 64, 130, 0.14);
+  padding: 1.5rem;
+}
+
+.card h1 {
+  margin: 0;
+  font-size: 1.35rem;
+  letter-spacing: 0.03em;
+}
+
+.subtitle {
+  margin-top: 0.2rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.filter-form {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.field-group label {
+  font-weight: 600;
+  font-size: 0.86rem;
+}
+
+.field-group input {
+  height: 2.3rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  padding: 0 0.8rem;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.field-group input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(44, 118, 255, 0.12);
+}
+
+.fields-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.btn {
+  margin-top: 0.3rem;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  font-size: 1rem;
+  font-weight: 700;
+  height: 2.5rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 9px 18px rgba(44, 118, 255, 0.3);
+}
+
+.feedback {
+  margin-top: 0.8rem;
+  min-height: 1.5rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 560px) {
+  .card {
+    padding: 1rem;
+  }
+  .fields-row {
+    grid-template-columns: 1fr;
+  }
+}
